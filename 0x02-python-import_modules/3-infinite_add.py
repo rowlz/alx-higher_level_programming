@@ -10,5 +10,5 @@ if __name__ == "__main__":
             print("{}".format(sys.argv[1]))
         else:
             for i in range(1, total):
-                a_sum = sys.argv[i] + a_sum
+                a_sum += sys.argv[i]
             print("{}".format(a_sum))
