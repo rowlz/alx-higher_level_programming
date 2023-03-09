@@ -7,8 +7,8 @@ if __name__ == "__main__":
         print("0")
     else:
         if total == 2:
-            print("{}".format(sys.argv[1]))
+            print("{}".format(int(sys.argv[1])))
         else:
             for i in range(1, total):
-                a_sum += sys.argv[i]
+                a_sum += int(sys.argv[i])
             print("{}".format(a_sum))
