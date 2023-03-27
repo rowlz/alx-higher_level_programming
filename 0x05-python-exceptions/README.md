@@ -1,0 +1,1 @@
+README about try/exceptions
