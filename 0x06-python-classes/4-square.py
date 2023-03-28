@@ -17,33 +17,31 @@ class Square:
 
     @property
     def size(self):
-           """ get size attr with property decorator
+        """ get size attr with property decorator
         Returns:
-            int: the size 
+            int: the size
         """
         return self.__size
 
-     @size.setter
-    def size(self, size):
+    @size.setter
+    def size(self, value):
         """ Square class instance initialization
          Args:
-             size (int): size of square.
+             value (int): value of square.
          Raises:
-             TypeError: size must be an integer
-             ValueError: size must not be less than 0
+             TypeError: value must be an integer
+             ValueError: value must not be less than 0
          """
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
-
+        self.__size = value
 
     def area(self):
         """ The Area public instance method
         Return:
             int __area
         """
-
         self.__area = self.__size * self.__size
         return (self.__area)
