@@ -6,7 +6,7 @@ adds 2 intergers or floats together and returns an interger
 takes a default argument as 98 (b = 98) and a variable arguement a
 
 import:
->>> matrix_mul = __import__('100-matrix_mul.py').matrix_mul
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
 correct output:
 ==============
