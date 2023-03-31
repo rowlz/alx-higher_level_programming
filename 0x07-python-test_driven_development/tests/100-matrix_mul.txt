@@ -1,0 +1,22 @@
+This is the "matrix_mul" module
+=================================
+
+adds 2 intergers or floats together and returns an interger
+--------------------------------------------------
+takes a default argument as 98 (b = 98) and a variable arguement a
+
+import:
+>>> matrix_mul = __import__('100-matrix_mul.py').matrix_mul
+
+correct output:
+==============
+
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+
+>>> print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+[[13, 16]]
+
+
+wrong output:
+============
