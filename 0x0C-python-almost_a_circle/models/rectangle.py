@@ -1,41 +1,28 @@
 #!/usr/bin/python3
 """ Rectangle Module
 """
-
-
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class
-    Attribtes:
-        width: width int variable
-        Height: height int variabel
-        x: variable
-        y: variable
+
+    """ Rectangle class
     """
 
-    __width = 0
-    __height = 0
-    __x = 0
-    __y = 0
-
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """init funtion
-        ARGS
-            width: width vriable
-            height: height variable
-            x= int varaibale
-            y= int variable
-            id= int variable
+    def __init__(self, width: int, height: int, x=0, y=0, id=None):
+        """ Instance init function
+        Args:
+                width (int): width of rectangle
+                height (int): height
+                x (int, optional): x of rec
+                y (int, optional): y
+                id (None, optional): id
         """
-
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-
-        Base.__init__(self, id)
 
     @property
     def width(self):
@@ -128,3 +115,66 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """ finds the area of the rectangle
+        Returns:
+                int: the area of the rectangle
+        """
+        return self.width * self.height
+
+    def display(self):
+        """ display the rectangle using #
+        """
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+        for i in range(self.y):
+            print("")
+        for i in range(self.height):
+            for i in range(self.x):
+                print(" ", end="")
+            print("#" * self.width, end="")
+            print("")
+
+    def __str__(self):
+        """ magic method overwrite
+        Returns:
+            str: rectangle description
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """ Update rectangle
+        Args:
+            *args: tuple of args
+            **kwargs: keywords args, key and value arguments
+        """
+        if len(args) != 0:
+            count = 0
+            for arg in args:
+                if count == 0:
+                    self.id = arg
+                elif count == 1:
+                    self.width = arg
+                elif count == 2:
+                    self.height = arg
+                elif count == 3:
+                    self.x = arg
+                elif count == 4:
+                    self.y = arg
+                count += 1
+
+        elif len(kwargs) != 0:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
+
+    def to_dictionary(self):
+        """ Details to dict
+        Returns:
+            dict: Dictionary of attr
+        """
+        dico = dict(id=self.id, width=self.width,
+                    height=self.height, x=self.x, y=self.y)
+        return dico
