@@ -4,7 +4,11 @@
 
 
 import os
+import sys
 import unittest
+
+p = os.path.abspath('.')
+sys.path.insert(1, p)
 from models.base import Base
 
 
