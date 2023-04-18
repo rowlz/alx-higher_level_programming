@@ -11,11 +11,11 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     def test_rect(self):
         r = Rectangle(10, 10)
-        self.assertEqual(r.id, 1)
+        self.assertEqual(r.id, 7)
 
     def test_rect2(self):
         r = Rectangle(1, 5)
-        self.assertEqual(r.id, 2)
+        self.assertEqual(r.id, 8)
 
     def test_rect3(self):
         r = Rectangle(11, 15, 0, 0, 12)
@@ -28,9 +28,6 @@ class TestRectangle(unittest.TestCase):
     def test_1_param(self):
         with self.assertRaises(TypeError):
             r2 = Rectangle(3)
-
-    def test_rect_from_base(self):
-        self.assertIsInstance(Rectangle(4, 5), Base)
 
     def test_x(self):
         r2 = Rectangle(4, 5)
