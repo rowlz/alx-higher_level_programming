@@ -1,18 +1,36 @@
 #!/usr/bin/python3
+"""Square Model
+"""
+
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ The Square Class inherits from Rectangle Class
+    """
+
     def __init__(self, size: int, x=0, y=0, id=None):
+        """ The Constructor for this class
+        Args:
+        size - size int variable
+        x - int
+        y - int
+        id - int
+        """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
+        """ Size getter
+        """
         return self.width
 
     @size.setter
     def size(self, value):
+        """ size second setter
+        """
+
         self.width = value
         self.height = value
 
